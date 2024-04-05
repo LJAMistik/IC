@@ -1,0 +1,259 @@
+@import url(/media-queries.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,300;0,700;1,100&display=swap');
+
+:root {
+    --cor-texto-link: #FFFFFF; /* Branco para quando necessario */
+    --cor-roxo-clarissimo: #E4E1EC; /* Roxo claro para cor de fundo do footer e efeitos*/
+    --cor-roxo-escuro: #4A227B; /* Roxo mais escuro para cor de fundo do cabeçalho e decoração do corpo */
+    --cor-roxo-medio: #5D4C87; /* Roxo médio para texto e outros */
+    --cor-roxo-claro: #755DD9; /* Roxo médio para efeitos */   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%; /*Faz com que o REM passe a ter 10px */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Estilo para a decoração de fundo */
+
+.logo-faculdade-top {
+    padding: 1.6rem;
+}
+
+.logo-faculdade-top img {
+    width: 26.7rem;
+}
+
+.circulo-corpo-superior {
+    position: absolute;
+    top: -100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(12rem at left 12rem);
+    background-color: var(--cor-roxo-clarissimo);
+    z-index: -1;
+}
+
+.circulo-corpo-inferior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--cor-roxo-escuro);
+    clip-path: circle(60rem at right 80rem);
+    z-index: -1;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+/* Estilo para o header/cabeçalho */
+
+header {
+    width: auto;
+    min-width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--cor-roxo-escuro);
+    padding: 2rem;
+}
+
+.links-cabecalho ul {
+    margin: 0;
+    display: inline-block;
+    color: var(--cor-texto-link);
+    font-size: 1.5em;
+    text-decoration: none;
+    list-style-type: none;
+    list-style: none;
+    padding: 0 1rem; 
+}
+
+.links-cabecalho li {
+    display: inline;
+}
+
+.links-cabecalho li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.links-cabecalho li a {
+    color: var(--cor-texto-link);
+    text-decoration: none;
+    position: relative;
+}
+
+.links-cabecalho li a:before {
+    content: ' ';
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    width: 0rem;
+    height: 0.15rem;
+    background-color: var(--cor-texto-link);
+    transition: width 1.5s ease; 
+}
+
+.links-cabecalho li a:hover:before {
+    width: 100%;
+}
+
+/* Estilo para a contéudo principal */
+
+.container-conteudo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 2.4rem;
+    padding-left: 4.8rem;
+}
+
+.caixa-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 68rem;
+    padding-bottom: 2.4rem;
+}
+
+.caixa-texto h2 {
+    color: var(--cor-roxo-escuro);
+    font-size: 2.5em;
+    line-height: 1.4em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.caixa-texto p {
+    color: var(--cor-roxo-medio);
+    font-size: 1.5em;
+}
+
+.caixa-texto a { /*************** botão **************/
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0.8rem 2rem;
+    background: var(--cor-roxo-escuro);
+    color: var(--cor-texto-link);
+    border-radius: 4rem;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.caixa-texto a:hover {
+    background-color: var(--cor-roxo-clarissimo);
+    color: var(--cor-roxo-escuro); /* Altera a cor de fundo no hover */
+}
+
+.caixa-imagem img {
+    position: relative;
+    max-width: 32rem;
+    border-radius: 100rem;
+}
+
+.caixa-imagem a {
+    color: var(--cor-roxo-claro);
+    font-size: xx-small;
+}
+
+/* Estilos dos ícones de mídia sociais */
+
+.ims {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.ims li {
+    list-style: none;
+    padding: 1rem;
+}
+
+.ims li:active {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone ao ser clicado/focado */
+}
+
+/* Estilos do Footer/rodapé */
+
+footer {
+    margin-top: auto;
+    width: auto;
+    height: 9.6rem;
+    background-color: var(--cor-roxo-clarissimo);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 80rem;
+}
+
+footer .logo-faculdade img {
+    width: 12rem;
+    height: auto;
+}
+
+.caixa-contato {
+    margin-left: 20px;
+}
+
+.caixa-contato a {
+    color: var(--cor-roxo-medio);
+    font-size: 1.4rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+.caixa-contato a:hover {
+    color: var(--cor-roxo-claro);
+}
+
+.caixa-assinatura p {
+    margin-top: 8px; 
+    color: var(--cor-roxo-escuro);
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+

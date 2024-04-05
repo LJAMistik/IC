@@ -1,0 +1,75 @@
+/* Estilos para dispositivos com largura máxima de 768px (tablets e smartphones em orientação paisagem) */
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 50%; /* Reduz o tamanho da fonte para dispositivos menores */
+    }
+
+    .logo-faculdade-top img {
+        width: 20rem; /* Reduz o tamanho do logotipo para caber em telas menores */
+    }
+
+    .circulo-corpo-superior {
+        display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
+    }
+
+    .circulo-corpo-inferior {
+        display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
+    }
+
+    header {
+        height: auto; /* Ajusta a altura do cabeçalho automaticamente */
+        padding: 1rem; /* Reduz o preenchimento para economizar espaço */
+    }
+
+    .links-cabecalho ul {
+        font-size: 1.2em; /* Reduz o tamanho da fonte dos links de cabeçalho */
+    }
+
+    .container-conteudo {
+        flex-direction: column; /* Empilha os itens em vez de exibi-los lado a lado */
+        align-items: center; /* Centraliza os itens na tela */
+        padding-left: 2rem; /* Reduz o preenchimento à esquerda para economizar espaço */
+        padding-right: 2rem; /* Reduz o preenchimento à direita para economizar espaço */
+    }
+
+    .caixa-texto {
+        max-width: 100%; /* Ajusta a largura máxima para o tamanho da tela */
+    }
+
+    .caixa-imagem img {
+        max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+    }
+
+    footer {
+        height: auto; /* Ajusta a altura do rodapé automaticamente */
+    }
+
+    footer .logo-faculdade img {
+        width: 10rem; /* Reduz o tamanho do logotipo do rodapé para caber em telas menores */
+    }
+
+    .caixa-contato {
+        margin-left: 0; /* Remove a margem à esquerda para alinhar os contatos ao centro */
+        margin-top: 1rem; /* Adiciona margem superior para separar os contatos */
+        text-align: center; /* Alinha os contatos ao centro */
+    }
+}
+
+/* Estilos para dispositivos com largura máxima de 480px (smartphones em orientação retrato) */
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 40%; /* Reduz ainda mais o tamanho da fonte para dispositivos muito pequenos */
+    }
+
+    .logo-faculdade-top img {
+        width: 16rem; /* Reduz ainda mais o tamanho do logotipo para telas muito pequenas */
+    }
+
+    .links-cabecalho ul {
+        font-size: 1em; /* Reduz ainda mais o tamanho da fonte dos links de cabeçalho */
+    }
+
+    footer .logo-faculdade img {
+        width: 8rem; /* Reduz ainda mais o tamanho do logotipo do rodapé para telas muito pequenas */
+    }
+}
