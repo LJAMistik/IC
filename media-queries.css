@@ -44,6 +44,10 @@
         height: auto; /* Ajusta a altura do rodapé automaticamente */
     }
 
+    .container-rodape {
+        justify-content: center;
+    }
+
     footer .logo-faculdade img {
         width: 10rem; /* Reduz o tamanho do logotipo do rodapé para caber em telas menores */
     }
@@ -53,6 +57,18 @@
         margin-top: 1rem; /* Adiciona margem superior para separar os contatos */
         text-align: center; /* Alinha os contatos ao centro */
     }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Estilos para tablets de 11 polegadas em orientação retrato */
+    .circulo-corpo-inferior {
+        display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
+    }
+
+    .container-rodape {
+        justify-content: center;
+    }
+
 }
 
 /* Estilos para dispositivos com largura máxima de 480px (smartphones em orientação retrato) */
@@ -68,8 +84,17 @@
     .links-cabecalho ul {
         font-size: 1em; /* Reduz ainda mais o tamanho da fonte dos links de cabeçalho */
     }
+    
+    .circulo-corpo-inferior {
+        display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
+    }
 
     footer .logo-faculdade img {
         width: 8rem; /* Reduz ainda mais o tamanho do logotipo do rodapé para telas muito pequenas */
     }
+
+    .container-rodape {
+        justify-content: center;
+    }
+
 }
