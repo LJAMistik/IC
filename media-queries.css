@@ -8,10 +8,7 @@
         width: 20rem; /* Reduz o tamanho do logotipo para caber em telas menores */
     }
 
-    .circulo-corpo-superior {
-        display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
-    }
-
+    .circulo-corpo-superior,
     .circulo-corpo-inferior {
         display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
     }
@@ -28,16 +25,12 @@
     .container-conteudo {
         flex-direction: column; /* Empilha os itens em vez de exibi-los lado a lado */
         align-items: center; /* Centraliza os itens na tela */
-        padding-left: 2rem; /* Reduz o preenchimento à esquerda para economizar espaço */
-        padding-right: 2rem; /* Reduz o preenchimento à direita para economizar espaço */
+        padding: 0 2rem; /* Reduz o preenchimento à esquerda e direita para economizar espaço */
     }
 
-    .caixa-texto {
-        max-width: 100%; /* Ajusta a largura máxima para o tamanho da tela */
-    }
-
+    .caixa-texto,
     .caixa-imagem img {
-        max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+        max-width: 100%; /* Ajusta a largura máxima para o tamanho da tela */
     }
 
     footer {
@@ -53,14 +46,13 @@
     }
 
     .caixa-contato {
-        margin-left: 0; /* Remove a margem à esquerda para alinhar os contatos ao centro */
-        margin-top: 1rem; /* Adiciona margem superior para separar os contatos */
+        margin: 1rem auto 0; /* Alinha os contatos ao centro e adiciona margem superior */
         text-align: center; /* Alinha os contatos ao centro */
     }
 }
 
+/* Estilos para tablets de 11 polegadas em orientação retrato */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    /* Estilos para tablets de 11 polegadas em orientação retrato */
     .circulo-corpo-inferior {
         display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
     }
@@ -68,7 +60,6 @@
     .container-rodape {
         justify-content: center;
     }
-
 }
 
 /* Estilos para dispositivos com largura máxima de 480px (smartphones em orientação retrato) */
@@ -84,7 +75,7 @@
     .links-cabecalho ul {
         font-size: 1em; /* Reduz ainda mais o tamanho da fonte dos links de cabeçalho */
     }
-    
+
     .circulo-corpo-inferior {
         display: none; /* Oculta a decoração de fundo para economizar espaço em telas menores */
     }
@@ -96,5 +87,77 @@
     .container-rodape {
         justify-content: center;
     }
+}
 
+/* Estilos para menu em telas menores */
+@media (max-width: 600px) {
+    .menu {
+        display: block;
+        position: absolute;
+        top: 4.6875rem;
+        left: 0;
+        background: var(--roxo);
+        text-align: center;
+        width: 100%;
+        height: 0;
+        z-index: 1;
+        visibility: hidden;
+        overflow-y: hidden;
+        transition: 0.5s;
+    }
+
+    .menu a {
+        padding: 1rem 0;
+        margin-inline: 1rem;
+        border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
+        border-radius: 0;
+    }
+
+    .btn-menu {
+        background: none;
+        border: none;
+        font: inherit;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--white);
+        padding: 1rem 0;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        border-top: 0.125rem solid;
+        width: 1.25rem;
+    }
+
+    .hamburger::after,
+    .hamburger::before {
+        content: " ";
+        display: block;
+        width: 1.25rem;
+        height: 0.125rem;
+        background: currentColor;
+        margin-top: 0.3125rem;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .nav.active .menu {
+        height: calc(100vh - 4.6875rem);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .nav.active .hamburger {
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -0.4375rem;
+    }
 }
