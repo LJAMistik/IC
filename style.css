@@ -158,16 +158,42 @@ header {
     font-size: 1.5em;
 }
 
-.caixa-texto a { /*************** botão **************/
+.caixa-botao {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.botao { 
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
     padding: 0.8rem 2rem;
+    cursor: pointer;
     background: var(--cor-roxo-escuro);
     color: var(--cor-texto-link);
+    border: none;
     border-radius: 4rem;
     letter-spacing: 0.1rem;
     transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: var(--cor-roxo-clarissimo);
+    color: var(--cor-roxo-escuro); /* Altera a cor de fundo no hover */
+}
+
+.caixa-texto a { 
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0.8rem 2rem;
+    color: var(--cor-roxo-escuro);
+    border-radius: 4rem;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
 }
 
 .caixa-texto a:hover {
@@ -179,11 +205,6 @@ header {
     position: relative;
     max-width: 32rem;
     border-radius: 100rem;
-}
-
-.caixa-imagem a {
-    color: var(--cor-roxo-claro);
-    font-size: xx-small;
 }
 
 /* Estilos dos ícones de mídia sociais */
