@@ -16,8 +16,8 @@
 }
 
 html {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     font-size: 62.5%; /*Faz com que o REM passe a ter 10px */
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -62,10 +62,10 @@ body {
     z-index: -1;
 }
 
-main {
-    flex: 1;
-    padding-bottom: 2rem;
-}
+    main {
+        flex: 1;
+        padding-bottom: 1rem;
+    }
 
 /* Estilo para o header/cabeçalho */
 
@@ -127,23 +127,19 @@ header {
     position: relative;
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding-top: 2.4rem;
     padding-left: 4.8rem;
 }
 
 .caixa-texto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
+    flex: 1;
     max-width: 68rem;
     padding-bottom: 2.4rem;
 }
+
 
 .caixa-texto h2 {
     color: var(--cor-roxo-escuro);
@@ -156,6 +152,24 @@ header {
 .caixa-texto p {
     color: var(--cor-roxo-medio);
     font-size: 1.5em;
+}
+
+.caixa-texto a { 
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0.8rem 2rem;
+    color: var(--cor-roxo-escuro);
+    border-radius: 4rem;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.caixa-texto a:hover {
+    background-color: var(--cor-roxo-clarissimo);
+    color: var(--cor-roxo-escuro);
 }
 
 .caixa-botao {
@@ -180,55 +194,55 @@ header {
 
 .botao:hover {
     background-color: var(--cor-roxo-clarissimo);
-    color: var(--cor-roxo-escuro); /* Altera a cor de fundo no hover */
+    color: var(--cor-roxo-escuro); 
 }
 
-.caixa-texto a { 
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    padding: 0.8rem 2rem;
-    color: var(--cor-roxo-escuro);
-    border-radius: 4rem;
-    letter-spacing: 0.1rem;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-}
-
-.caixa-texto a:hover {
-    background-color: var(--cor-roxo-clarissimo);
-    color: var(--cor-roxo-escuro); /* Altera a cor de fundo no hover */
+.caixa-imagem {
+    flex: 0 0 32rem;
+    margin-left: 4.8rem;
+    margin-right: 2rem;;
 }
 
 .caixa-imagem img {
-    position: relative;
-    max-width: 32rem;
-    border-radius: 100rem;
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
 }
+
 
 /* Estilos dos ícones de mídia sociais */
 
-.ims {
-    position: absolute;
-    top: 50%;
-    right: 0.5rem;
-    transform: translateY(-50%);
+.container-ims {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-top: 1.6rem;
+}
+
+.ims {
+    display: flex;
     align-items: center;
-    flex-direction: column;
-    cursor: pointer;
+}
+
+.ims ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .ims li {
-    list-style: none;
-    padding: 1rem;
+    margin-right: 1.6rem;
 }
 
-.ims li:active {
-    transform: scale(1.2); /* Aumenta o tamanho do ícone ao ser clicado/focado */
+.ims li a {
+    display: block; 
 }
+
+.ims li a img {
+    width: 3.2rem;
+    height: auto;
+}
+
 
 /* Estilos do Footer/rodapé */
 
@@ -278,3 +292,27 @@ footer .logo-faculdade img {
     letter-spacing: 0.1rem;
 }
 
+.texto-rolagem {
+    max-height: 80px;
+    overflow-y: auto; 
+    padding: 10px;
+    border: 1px solid #4A227B;
+    border-radius: 5px;
+
+/* Estilização da barra de rolagem */
+scrollbar-width: thin; /* Para navegadores que suportam a propriedade */
+scrollbar-color: #4A227B #E4E1EC; /* Cor da barra de rolagem (cor de fundo, cor do indicador) */
+
+/* Estilos específicos para WebKit (Chrome, Safari, Opera) */
+scrollbar-width: thin;
+scrollbar-color: #4A227B #E4E1EC;
+}
+
+.texto-rolagem::-webkit-scrollbar {
+width: 10px; /* Largura da barra de rolagem */
+}
+
+.texto-rolagem::-webkit-scrollbar-thumb {
+background-color: #4A227B; /* Cor do indicador da barra de rolagem */
+border-radius: 5px; /* Raio das bordas do indicador */
+}
